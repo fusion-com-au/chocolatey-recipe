@@ -6,8 +6,6 @@ Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowFileE
 
 # updates
 choco install chocolatey
-Install-WindowsUpdate -getUpdatesFromMS -acceptEula -SuppressReboots
-choco install chocolatey
 choco install powershell
 # Dot Net 2/3
 choco install NetFx3 -source windowsfeatures
@@ -83,5 +81,4 @@ choco install IIS-WebServerRole -source windowsfeatures# source control tools
 
 Enable-UAC
 Enable-MicrosoftUpdate
-Install-WindowsUpdate -acceptEula
-
+Install-WindowsUpdate -getUpdatesFromMS -acceptEula -SuppressReboots
