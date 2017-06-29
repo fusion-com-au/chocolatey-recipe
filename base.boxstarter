@@ -20,8 +20,21 @@ choco install sourcetree
 choco install git-credential-winstore
 choco install poshgit
 choco install openssh
+
+
+# Docker
+
+choco install Microsoft-Hyper-V-All -source windowsFeatures
+# choco install Microsoft-Hyper-V-Tools-All -source windowsFeatures
+# choco install Microsoft-Hyper-V-Management-Clients -source windowsFeatures
+# choco install Microsoft-Hyper-V-Management-PowerShell -source windowsFeatures
+# choco install Microsoft-Hyper-V -source windowsFeatures
+# choco install Microsoft-Hyper-V-Hypervisor -source windowsFeatures
+# choco install Microsoft-Hyper-V-Services -source windowsFeatures
+
 choco install docker-for-windows
 install-module post-docker
+
 
 # languages
 choco install nodist
