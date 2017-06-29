@@ -1,8 +1,4 @@
-
-# editors
-choco install visualstudiocode
-choco install sublimetext3
-choco install sublimetext3.packagecontrol
+ . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_frontend-webdev.boxstarter } | iex;
 
 # dotnet
 choco install resharper
@@ -18,12 +14,6 @@ choco install resharper
 #imdisk -a -f "$env:temp\visual-studio-pro-2015.iso" -m "l:"
 #Install-ChocolateyInstallPackage 'Visual_Studio_Pro_2015_English' 'exe' '/q' 'l:\vs_professional.exe'
 #imdisk -d -m l:
-
-# browsers
-choco install GoogleChrome
-choco install Firefox
-Install-ChocolateyPinnedTaskBarItem "$env:windir\explorer.exe"
-Install-ChocolateyPinnedTaskBarItem "$env:SystemRoot\system32\WindowsPowerShell\v1.0\powershell.exe"
 
 # server
 
