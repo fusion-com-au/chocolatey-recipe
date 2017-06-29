@@ -1,14 +1,14 @@
+choco feature enable -n allowGlobalConfirmation
+
 # #justwindowsthings
 Disable-UAC
 Disable-BingSearch
-Update-ExecutionPolicy RemoteSigned  
+Update-ExecutionPolicy RemoteSigned  
 
 # updates
 choco install chocolatey
 choco install powershell
-# Dot Net 2/3
 choco install NetFx3 -source windowsfeatures
-# Dot Net 4
 choco install NetFx4-AdvSrvs -source windowsfeatures
 choco install vcredist2005
 choco install vcredist2008
@@ -60,13 +60,23 @@ choco install poshgit
 choco install ilmerge
 choco install paint.net
 
-
 # editors
 choco install resharper
 choco install visualstudiocode
 choco install sublimetext3
 choco install sublimetext3.packagecontrol
 
+# SQL Server
+Get-ChocolateyWebFile "SQL_Svr_Web_Ed_2014w_SP1_64Bit_English" "$env:temp\sql-server-web-64bit-2014.iso" \\fileserver\software\windows\isos\SW_DVD9_SQL_Svr_Web_Ed_2014w_SP1_64Bit_English_-2_MLF_X20-29022
+imdisk -a -f "$env:temp\sql-server-web-64bit-2014.iso" -m "l:"
+Install-ChocolateyInstallPackage 'SQL_Svr_Web_Ed_2014w_SP1_64Bit_English' 'exe' '/q' 'l:\setup.exe'
+imdisk -d -m l:
+
+# Visual Studio
+Get-ChocolateyWebFile "Visual_Studio_Pro_2015_English" "$env:temp\visual-studio-pro-2015.iso" \\fileserver\software\windows\isos\SW_DVD9_NTRL_Visual_Studio_Pro_2015_English_FPP_VL_MLF_X20-29901
+imdisk -a -f "$env:temp\visual-studio-pro-2015.iso" -m "l:"
+Install-ChocolateyInstallPackage 'Visual_Studio_Pro_2015_English' 'exe' '/q' 'l:\vs_professional.exe'
+imdisk -d -m l:
 
 # browsers
 choco install google-chrome-x64
@@ -81,3 +91,4 @@ choco install IIS-WebServerRole -source windowsfeatures# source control tools
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -getUpdatesFromMS -acceptEula -SuppressReboots
+
