@@ -1,4 +1,8 @@
+Disable-UAC
+Update-ExecutionPolicy RemoteSigned 
+
 . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_frontend-webdev.boxstarter } | iex;
+. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/server_iis.boxstarter } | iex;
 
 # Utilities
 choco install resharper
@@ -20,3 +24,7 @@ choco install scriptcs
 #imdisk -a -f "$env:temp\visual-studio-pro-2015.iso" -m "l:"
 #Install-ChocolateyInstallPackage 'Visual_Studio_Pro_2015_English' 'exe' '/q' 'l:\vs_professional.exe'
 #imdisk -d -m l:
+
+
+# Cleanup
+Enable-UAC
