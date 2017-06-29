@@ -1,14 +1,19 @@
+Update-ExecutionPolicy RemoteSigned  
+
+#install Tooling
+. { iwr -useb https://chocolatey.org/install.ps1 } | iex;
+. { iwr -useb https://get.scoop.sh } | iex;
 choco feature enable -n allowGlobalConfirmation
+choco install powershell
+scoop install sudo
+
 
 # #justwindowsthings
 Disable-UAC
 Disable-BingSearch
-Update-ExecutionPolicy RemoteSigned  
 Set-ExplorerOptions -showHiddenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
 
 # updates
-choco install chocolatey
-choco install powershell
 choco install NetFx3 -source windowsfeatures
 choco install NetFx4-AdvSrvs -source windowsfeatures
 choco install vcredist2005
@@ -26,7 +31,7 @@ choco install sourcetree
 choco install git-credential-winstore
 
 #languages
-choco install nodejs.install
+choco install nodist
 choco install python2
 choco install jre8
 
@@ -61,166 +66,6 @@ choco install wget
 choco install poshgit
 choco install ilmerge
 choco install paint.net
-
-# editors
-choco install resharper
-choco install visualstudiocode
-choco install sublimetext3
-choco install sublimetext3.packagecontrol
-
-# SQL Server
-#Get-ChocolateyWebFile "SQL_Svr_Web_Ed_2014w_SP1_64Bit_English" "$env:temp\sql-server-web-64bit-2014.iso" \\fileserver\software\windows\isos\SW_DVD9_SQL_Svr_Web_Ed_2014w_SP1_64Bit_English_-2_MLF_X20-29022
-#imdisk -a -f "$env:temp\sql-server-web-64bit-2014.iso" -m "l:"
-#Install-ChocolateyInstallPackage 'SQL_Svr_Web_Ed_2014w_SP1_64Bit_English' 'exe' '/q' 'l:\setup.exe'
-#imdisk -d -m l:
-
-# Visual Studio
-#Get-ChocolateyWebFile "Visual_Studio_Pro_2015_English" "$env:temp\visual-studio-pro-2015.iso" \\fileserver\software\windows\isos\SW_DVD9_NTRL_Visual_Studio_Pro_2015_English_FPP_VL_MLF_X20-29901
-#imdisk -a -f "$env:temp\visual-studio-pro-2015.iso" -m "l:"
-#Install-ChocolateyInstallPackage 'Visual_Studio_Pro_2015_English' 'exe' '/q' 'l:\vs_professional.exe'
-#imdisk -d -m l:
-
-# browsers
-choco install GoogleChrome
-choco install Firefox
-Install-ChocolateyPinnedTaskBarItem "$env:windir\explorer.exe"
-Install-ChocolateyPinnedTaskBarItem "$env:SystemRoot\system32\WindowsPowerShell\v1.0\powershell.exe"
-
-# server
-
-# Possible WindowsFeatures
-# -------------------------------------------
-# Feature Name
-# -------------------------------------------
-choco install Microsoft-Hyper-V-All -source windowsFeatures
-# choco install Microsoft-Hyper-V-Tools-All -source windowsFeatures
-# choco install Microsoft-Hyper-V-Management-Clients -source windowsFeatures
-# choco install Microsoft-Hyper-V-Management-PowerShell -source windowsFeatures
-# choco install Microsoft-Hyper-V -source windowsFeatures
-# choco install Microsoft-Hyper-V-Hypervisor -source windowsFeatures
-# choco install Microsoft-Hyper-V-Services -source windowsFeatures
-# choco install Printing-Foundation-Features -source windowsFeatures
-# choco install Printing-Foundation-LPRPortMonitor -source windowsFeatures
-# choco install Printing-Foundation-LPDPrintService -source windowsFeatures
-# choco install Printing-Foundation-InternetPrinting-Client -source windowsFeatures
-# choco install FaxServicesClientPackage -source windowsFeatures
-# choco install ScanManagementConsole -source windowsFeatures
-# choco install Microsoft-Windows-Subsystem-Linux -source windowsFeatures
-# choco install LegacyComponents -source windowsFeatures
-# choco install DirectPlay -source windowsFeatures
-# choco install SimpleTCP -source windowsFeatures
-# choco install SNMP -source windowsFeatures
-# choco install WMISnmpProvider -source windowsFeatures
-choco install MicrosoftWindowsPowerShellV2Root -source windowsFeatures
-choco install MicrosoftWindowsPowerShellV2 -source windowsFeatures
-# choco install Windows-Identity-Foundation -source windowsFeatures
-# choco install DirectoryServices-ADAM-Client -source windowsFeatures
-# choco install Internet-Explorer-Optional-amd64 -source windowsFeatures
-# choco install NetFx3 -source windowsFeatures
-choco install IIS-WebServer -source windowsFeatures
-choco install IIS-WebServerRole -source windowsFeatures
-# choco install IIS-CommonHttpFeatures -source windowsFeatures
-choco install IIS-HttpErrors -source windowsFeatures
-choco install IIS-HttpRedirect -source windowsFeatures
-# choco install IIS-ApplicationDevelopment -source windowsFeatures
-# choco install IIS-NetFxExtensibility -source windowsFeatures
-# choco install IIS-NetFxExtensibility45 -source windowsFeatures
-# choco install IIS-HealthAndDiagnostics -source windowsFeatures
-# choco install IIS-HttpLogging -source windowsFeatures
-# choco install IIS-LoggingLibraries -source windowsFeatures
-# choco install IIS-RequestMonitor -source windowsFeatures
-# choco install IIS-HttpTracing -source windowsFeatures
-# choco install IIS-Security -source windowsFeatures
-# choco install IIS-URLAuthorization -source windowsFeatures
-choco install IIS-RequestFiltering -source windowsFeatures
-# choco install IIS-IPSecurity -source windowsFeatures
-# choco install IIS-Performance -source windowsFeatures
-choco install IIS-HttpCompressionDynamic -source windowsFeatures
-choco install IIS-WebServerManagementTools -source windowsFeatures
-choco install IIS-ManagementScriptingTools -source windowsFeatures
-# choco install IIS-IIS6ManagementCompatibility -source windowsFeatures
-choco install IIS-Metabase -source windowsFeatures
-# choco install WAS-WindowsActivationService -source windowsFeatures
-# choco install WAS-ProcessModel -source windowsFeatures
-# choco install WAS-NetFxEnvironment -source windowsFeatures
-# choco install WAS-ConfigurationAPI -source windowsFeatures
-# choco install IIS-HostableWebCore -source windowsFeatures
-# choco install IIS-CertProvider -source windowsFeatures
-choco install IIS-WindowsAuthentication -source windowsFeatures
-# choco install IIS-DigestAuthentication -source windowsFeatures
-# choco install IIS-ClientCertificateMappingAuthentication -source windowsFeatures
-# choco install IIS-IISCertificateMappingAuthentication -source windowsFeatures
-# choco install IIS-ODBCLogging -source windowsFeatures
-# choco install IIS-StaticContent -source windowsFeatures
-# choco install IIS-DefaultDocument -source windowsFeatures
-# choco install IIS-DirectoryBrowsing -source windowsFeatures
-# choco install IIS-WebDAV -source windowsFeatures
-# choco install IIS-WebSockets -source windowsFeatures
-# choco install IIS-ApplicationInit -source windowsFeatures
-choco install IIS-ASPNET -source windowsFeatures
-choco install IIS-ASPNET45 -source windowsFeatures
-# choco install IIS-ASP -source windowsFeatures
-# choco install IIS-CGI -source windowsFeatures
-# choco install IIS-ISAPIExtensions -source windowsFeatures
-# choco install IIS-ISAPIFilter -source windowsFeatures
-# choco install IIS-ServerSideIncludes -source windowsFeatures
-# choco install IIS-CustomLogging -source windowsFeatures
-# choco install IIS-BasicAuthentication -source windowsFeatures
-# choco install IIS-HttpCompressionStatic -source windowsFeatures
-choco install IIS-ManagementConsole -source windowsFeatures
-choco install IIS-ManagementService -source windowsFeatures
-# choco install IIS-WMICompatibility -source windowsFeatures
-# choco install IIS-LegacyScripts -source windowsFeatures
-# choco install IIS-LegacySnapIn -source windowsFeatures
-# choco install IIS-FTPServer -source windowsFeatures
-# choco install IIS-FTPSvc -source windowsFeatures
-# choco install IIS-FTPExtensibility -source windowsFeatures
-# choco install MSMQ-Container -source windowsFeatures
-# choco install MSMQ-Server -source windowsFeatures
-# choco install MSMQ-Triggers -source windowsFeatures
-# choco install MSMQ-ADIntegration -source windowsFeatures
-# choco install MSMQ-HTTP -source windowsFeatures
-# choco install MSMQ-Multicast -source windowsFeatures
-# choco install MSMQ-DCOMProxy -source windowsFeatures
-# choco install WCF-Services45 -source windowsFeatures
-# choco install WCF-HTTP-Activation45 -source windowsFeatures
-# choco install WCF-TCP-Activation45 -source windowsFeatures
-# choco install WCF-Pipe-Activation45 -source windowsFeatures
-# choco install WCF-MSMQ-Activation45 -source windowsFeatures
-# choco install WCF-TCP-PortSharing45 -source windowsFeatures
-# choco install WCF-HTTP-Activation -source windowsFeatures
-# choco install WCF-NonHTTP-Activation -source windowsFeatures
-# choco install NetFx4-AdvSrvs -source windowsFeatures
-# choco install NetFx4Extended-ASPNET45 -source windowsFeatures
-# choco install MediaPlayback -source windowsFeatures
-# choco install WindowsMediaPlayer -source windowsFeatures
-# choco install ServicesForNFS-ClientOnly -source windowsFeatures
-# choco install ClientForNFS-Infrastructure -source windowsFeatures
-# choco install NFS-Administration -source windowsFeatures
-# choco install Printing-PrintToPDFServices-Features -source windowsFeatures
-# choco install Printing-XPSServices-Features -source windowsFeatures
-# choco install RasCMAK -source windowsFeatures
-# choco install RasRip -source windowsFeatures
-# choco install MSRDC-Infrastructure -source windowsFeatures
-# choco install SearchEngine-Client-Package -source windowsFeatures
-# choco install TelnetClient -source windowsFeatures
-# choco install TFTP -source windowsFeatures
-# choco install TIFFIFilter -source windowsFeatures
-# choco install Xps-Foundation-Xps-Viewer -source windowsFeatures
-# choco install WorkFolders-Client -source windowsFeatures
-# choco install SmbDirect -source windowsFeatures
-# choco install SMB1Protocol -source windowsFeatures
-# choco install Client-DeviceLockdown -source windowsFeatures
-# choco install Client-EmbeddedShellLauncher -source windowsFeatures
-# choco install Client-EmbeddedBootExp -source windowsFeatures
-# choco install Client-EmbeddedLogon -source windowsFeatures
-# choco install Client-KeyboardFilter -source windowsFeatures
-# choco install Client-UnifiedWriteFilter -source windowsFeatures
-# choco install MultiPoint-Connector -source windowsFeatures
-# choco install MultiPoint-Connector-Services -source windowsFeatures
-# choco install MultiPoint-Tools -source windowsFeatures
-# choco install DataCenterBridging -source windowsFeatures
-# choco install Containers -source windowsFeatures
 
 
 Enable-UAC
