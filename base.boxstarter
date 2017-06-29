@@ -1,6 +1,7 @@
+Disable-UAC
 Update-ExecutionPolicy RemoteSigned  
 
-#install Tooling
+# Tooling
 . { iwr -useb https://chocolatey.org/install.ps1 } | iex;
 . { iwr -useb https://get.scoop.sh } | iex;
 choco feature enable -n allowGlobalConfirmation
@@ -9,11 +10,46 @@ scoop install sudo
 
 
 # #justwindowsthings
-Disable-UAC
 Disable-BingSearch
 Set-ExplorerOptions -showHiddenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
 
-# updates
+# Dev
+choco install winmerge
+choco install git
+choco install sourcetree
+choco install git-credential-winstore
+choco install poshgit
+choco install openssh
+choco install docker-for-windows
+install-module post-docker
+
+# languages
+choco install nodist
+choco install python2
+choco install jre8
+
+# utilities
+choco install skype 
+choco install fiddler4
+choco install filezilla
+choco install f.lux
+choco install astrogrep
+choco install autohotkey.portable
+choco install zoomit
+choco install licecap
+choco install vlc
+choco install sharex
+choco install procexp
+choco install synergy
+choco install bonjour 
+choco install enpass.install
+choco install 7zip
+choco install glasswire
+choco install wget
+choco install inkscape
+choco install paint.net
+
+# Updates
 choco install NetFx3 -source windowsfeatures
 choco install NetFx4-AdvSrvs -source windowsfeatures
 choco install vcredist2005
@@ -24,51 +60,7 @@ choco install vcredist2013
 choco install vcredist2015
 choco install vcredist2017
 
-# Dev
-choco install winmerge
-choco install git
-choco install sourcetree
-choco install git-credential-winstore
-
-#languages
-choco install nodist
-choco install python2
-choco install jre8
-
-# webdev
-choco install fiddler4
-choco install filezilla
-choco install prefix
-choco install NugetPackageExplorer
-
-# utilities
-choco install putty 
-choco install skype 
-choco install f.lux
-choco install dotPeell astrogrep
-choco install scriptcs
-choco install autohotkey.portable
-choco install zoomit
-choco install licecap
-choco install vlc
-choco install inkscape
-choco install sharex
-choco install procexp
-choco install synergy
-choco install bonjour 
-choco install openssh
-choco install enpass.install
-choco install docker-for-windows
-install-module post-docker
-choco install 7zip
-choco install glasswire
-choco install wget
-choco install poshgit
-choco install ilmerge
-choco install paint.net
-
-
+# Cleanup
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -getUpdatesFromMS -acceptEula -SuppressReboots
-
