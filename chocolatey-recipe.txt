@@ -2,7 +2,7 @@
 Disable-UAC
 Disable-BingSearch
 Update-ExecutionPolicy RemoteSigned  
-Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives  -EnableShowFileExtensions -EnableShowFullPathInTitleBar
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowFileExtensions -EnableShowFullPathInTitleBar
 
 # updates
 choco install chocolatey
