@@ -1,0 +1,55 @@
+Update-ExecutionPolicy RemoteSigned  
+
+
+# Docker
+choco install Microsoft-Hyper-V-All -source windowsFeatures
+# choco install Microsoft-Hyper-V-Tools-All -source windowsFeatures
+# choco install Microsoft-Hyper-V-Management-Clients -source windowsFeatures
+# choco install Microsoft-Hyper-V-Management-PowerShell -source windowsFeatures
+# choco install Microsoft-Hyper-V -source windowsFeatures
+# choco install Microsoft-Hyper-V-Hypervisor -source windowsFeatures
+# choco install Microsoft-Hyper-V-Services -source windowsFeatures
+choco install docker-for-windows
+install-module post-docker
+
+
+# utilities
+choco install skype 
+choco install sourcetree
+choco install winmerge
+choco install fiddler4
+choco install filezilla
+choco install f.lux
+choco install astrogrep
+choco install autohotkey.portable
+choco install zoomit
+choco install licecap
+choco install vlc
+choco install sharex
+choco install procexp
+choco install synergy
+choco install bonjour 
+choco install enpass.install
+choco install 7zip
+choco install glasswire
+choco install wget
+choco install inkscape
+choco install paint.net
+
+
+# Updates
+choco install NetFx3 -source windowsfeatures
+choco install NetFx4-AdvSrvs -source windowsfeatures
+choco install vcredist2005
+choco install vcredist2008
+choco install vcredist2010
+choco install vcredist2012
+choco install vcredist2013
+choco install vcredist2015
+choco install vcredist2017
+
+
+# Cleanup
+Enable-UAC
+Enable-MicrosoftUpdate
+Install-WindowsUpdate -getUpdatesFromMS -acceptEula -SuppressReboots
