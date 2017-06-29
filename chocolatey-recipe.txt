@@ -27,6 +27,9 @@ choco install inkscape
 choco install sharex
 choco install procexp
 choco install synergy
+choco install bonjour 
+choco install openssh
+choco install enpass.install
 
 #languages
 choco install nodejs.install 
@@ -37,6 +40,7 @@ choco install jre8
 choco install visualstudio2015community
 choco install resharper
 choco install visualstudiocode
+choco install sublimetext3
 
 # browsers
 choco install google-chrome-x64
