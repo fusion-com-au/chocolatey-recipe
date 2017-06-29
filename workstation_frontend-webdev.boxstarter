@@ -1,0 +1,12 @@
+ . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_base.boxstarter } | iex;
+
+# editors
+choco install visualstudiocode
+choco install sublimetext3
+choco install sublimetext3.packagecontrol
+
+# browsers
+choco install GoogleChrome
+choco install Firefox
+Install-ChocolateyPinnedTaskBarItem "$env:windir\explorer.exe"
+Install-ChocolateyPinnedTaskBarItem "$env:SystemRoot\system32\WindowsPowerShell\v1.0\powershell.exe"
