@@ -1,7 +1,7 @@
-# source control tools
 choco install winmerge
 choco install git
 choco install sourcetree
+choco install git-credential-winstore
 
 # webdev
 choco install fiddler4
@@ -14,6 +14,7 @@ choco install putty
 choco install skype 
 choco install f.lux
 choco install dotPeek
+choco install poshgit
 choco install ilmerge
 choco install paint.net
 choco install astrogrep
@@ -41,6 +42,11 @@ choco install visualstudiocode
 choco install google-chrome-x64
 choco install Firefox
 
+# server
+choco install Microsoft-Hyper-V-All -source windowsFeatures
+choco install IIS-WebServerRole -source windowsfeatures# source control tools
+
+# updates
 Install-WindowsUpdate -getUpdatesFromMS -acceptEula -SuppressReboots
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives  -EnableShowFileExtensions -EnableShowFullPathInTitleBar
 
