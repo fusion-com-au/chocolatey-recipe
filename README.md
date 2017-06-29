@@ -5,10 +5,45 @@ A [Boxstarter](http://boxstarter.org/)/[Chocolatey](https://chocolatey.org/) scr
 
 Walk through is located at [Chocolatey and Boxstarter post.](http://www.jamessturtevant.com/posts/Chocolatey-And-Boxstarter/)
 
-Run this in powershell:
+Choose and run from below in powershell:
+
+## Base
 
 ```
- . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/chocolatey-recipe.txt } | iex;
+ . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/base.boxstarter } | iex;
+```
+
+### Server_IIS
+
+```
+ . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_dot-net.boxstarter } | iex;
+```
+
+## Workstation_Base
+
+```
+ . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_base.boxstarter } | iex;
+```
+
+### Workstation_Frontend
+
+includes
+
+- Workstation_Base
+
+```
+ . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_frontend-webdev.boxstarter } | iex;
+```
+
+### Workstation_DotNet
+
+includes:
+
+- Server_IIS
+- Workstation_Frontend
+
+```
+ . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_dot-net.boxstarter } | iex;
 ```
 
 
