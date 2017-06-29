@@ -1,3 +1,27 @@
+# #justwindowsthings
+Disable-UAC
+Disable-BingSearch
+Update-ExecutionPolicy RemoteSigned  
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives  -EnableShowFileExtensions -EnableShowFullPathInTitleBar
+
+# updates
+choco install chocolatey -y
+Install-WindowsUpdate -getUpdatesFromMS -acceptEula -SuppressReboots
+choco install chocolatey -y
+choco install powershell -y
+# Dot Net 2/3
+choco install NetFx3 -source windowsfeatures -y
+# Dot Net 4
+choco install NetFx4-AdvSrvs -source windowsfeatures -y
+choco install vcredist2005 -y
+choco install vcredist2008 -y
+choco install vcredist2010 -y
+choco install vcredist2012 -y
+choco install vcredist2013 -y
+choco install vcredist2015 -y
+choco install vcredist2017 -y
+
+# Dev
 choco install winmerge
 choco install git
 choco install sourcetree
@@ -18,11 +42,7 @@ choco install NugetPackageExplorer
 choco install putty 
 choco install skype 
 choco install f.lux
-choco install dotPeek
-choco install poshgit
-choco install ilmerge
-choco install paint.net
-choco install astrogrep
+choco install dotPeell astrogrep
 choco install scriptcs
 choco install autohotkey.portable
 choco install zoomit
@@ -36,21 +56,32 @@ choco install bonjour
 choco install openssh
 choco install enpass.install
 choco install docker
+choco install 7zip -y
+choco install glasswire -y
+choco install wget -y
+choco install poshgit
+choco install ilmerge
+choco install paint.net
+
 
 # editors
 choco install resharper
 choco install visualstudiocode
 choco install sublimetext3
+choco install sublimetext3.packagecontrol -y
+
 
 # browsers
 choco install google-chrome-x64
 choco install Firefox
+Install-ChocolateyPinnedTaskBarItem "$env:windir\explorer.exe"
+Install-ChocolateyPinnedTaskBarItem "$env:SystemRoot\system32\WindowsPowerShell\v1.0\powershell.exe"
 
 # server
 choco install Microsoft-Hyper-V-All -source windowsFeatures
 choco install IIS-WebServerRole -source windowsfeatures# source control tools
 
-# updates
-Install-WindowsUpdate -getUpdatesFromMS -acceptEula -SuppressReboots
-Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives  -EnableShowFileExtensions -EnableShowFullPathInTitleBar
+Enable-UAC
+Enable-MicrosoftUpdate
+Install-WindowsUpdate -acceptEula
 
