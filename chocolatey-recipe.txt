@@ -5,21 +5,21 @@ Update-ExecutionPolicy RemoteSigned  
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives  -EnableShowFileExtensions -EnableShowFullPathInTitleBar
 
 # updates
-choco install chocolatey -y
+choco install chocolatey
 Install-WindowsUpdate -getUpdatesFromMS -acceptEula -SuppressReboots
-choco install chocolatey -y
-choco install powershell -y
+choco install chocolatey
+choco install powershell
 # Dot Net 2/3
-choco install NetFx3 -source windowsfeatures -y
+choco install NetFx3 -source windowsfeatures
 # Dot Net 4
-choco install NetFx4-AdvSrvs -source windowsfeatures -y
-choco install vcredist2005 -y
-choco install vcredist2008 -y
-choco install vcredist2010 -y
-choco install vcredist2012 -y
-choco install vcredist2013 -y
-choco install vcredist2015 -y
-choco install vcredist2017 -y
+choco install NetFx4-AdvSrvs -source windowsfeatures
+choco install vcredist2005
+choco install vcredist2008
+choco install vcredist2010
+choco install vcredist2012
+choco install vcredist2013
+choco install vcredist2015
+choco install vcredist2017
 
 # Dev
 choco install winmerge
@@ -56,9 +56,9 @@ choco install bonjour
 choco install openssh
 choco install enpass.install
 choco install docker
-choco install 7zip -y
-choco install glasswire -y
-choco install wget -y
+choco install 7zip
+choco install glasswire
+choco install wget
 choco install poshgit
 choco install ilmerge
 choco install paint.net
@@ -68,7 +68,7 @@ choco install paint.net
 choco install resharper
 choco install visualstudiocode
 choco install sublimetext3
-choco install sublimetext3.packagecontrol -y
+choco install sublimetext3.packagecontrol
 
 
 # browsers
