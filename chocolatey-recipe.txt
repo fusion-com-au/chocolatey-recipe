@@ -1,47 +1,40 @@
 # source control tools
 choco install winmerge
-choco install git -params '"/GitAndUnixToolsOnPath"'
-#  cmder comes with git
-#choco install Cmder  
-choco install hyper
+choco install git
 choco install sourcetree
 
 # webdev
 choco install fiddler4
 choco install filezilla
-choco install nodejs.install 
 choco install prefix
+choco install NugetPackageExplorer
 
 # utilities
-choco install  putty 
+choco install putty 
 choco install skype 
-choco install f.lux  
+choco install f.lux
 choco install dotPeek
 choco install ilmerge
-choco install NugetPackageExplorer
 choco install paint.net
-#choco install PngGauntlet  #this package required manual entry
 choco install astrogrep
-choco install vagrant
-choco install greenshot
-choco install freemind
 choco install scriptcs
 choco install autohotkey.portable
 choco install zoomit
 choco install licecap
 choco install vlc
-choco install inkscape #SVG editor
+choco install inkscape
+choco install sharex
+choco install procexp
+choco install synergy
 
 #languages
-choco install elixir
+choco install nodejs.install 
+choco install python2
+choco install jre8
 
 # editors
 choco install visualstudio2015community
-#choco install resharper
-#choco install WebStorm
-choco install pycharm-community
-choco install notepadplusplus
-choco install atom
+choco install resharper
 choco install visualstudiocode
 
 # browsers
@@ -51,8 +44,3 @@ choco install Firefox
 Install-WindowsUpdate -getUpdatesFromMS -acceptEula -SuppressReboots
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives  -EnableShowFileExtensions -EnableShowFullPathInTitleBar
 
-# other not on chocolately
-# http://azurestorageexplorer.codeplex.com/
-# icons - https://www.syncfusion.com/downloads/metrostudio
-# view andriod - http://www.vysor.io/
-# OWASP ZAP https://github.com/zaproxy/zaproxy/wiki/Downloads
