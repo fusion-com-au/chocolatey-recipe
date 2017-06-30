@@ -1,5 +1,6 @@
 Disable-UAC
 Update-ExecutionPolicy RemoteSigned 
+Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
 
 . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_frontend-webdev.boxstarter } | iex;
 . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/server_iis.boxstarter } | iex;
@@ -13,17 +14,22 @@ choco install dotPeek
 choco install scriptcs
 
 
+installFromIso ($name, $source) {
+	$mountVolume = mount-diskimage $source -PassThru
+	$driveLetter = ($mountVolume | Get-Volume).DriveLetter
+	Install-ChocolateyInstallPackage `
+		-PackageName $name `
+		-FileType 'exe' `
+		-SilentArgs '/q' `
+		-File "$($driveLetter):\setup.exe"
+}
+
+
 # SQL Server
-#Get-ChocolateyWebFile "SQL_Svr_Web_Ed_2014w_SP1_64Bit_English" "$env:temp\sql-server-web-64bit-2014.iso" \\fileserver\software\windows\isos\SW_DVD9_SQL_Svr_Web_Ed_2014w_SP1_64Bit_English_-2_MLF_X20-29022
-#imdisk -a -f "$env:temp\sql-server-web-64bit-2014.iso" -m "l:"
-#Install-ChocolateyInstallPackage 'SQL_Svr_Web_Ed_2014w_SP1_64Bit_English' 'exe' '/q' 'l:\setup.exe'
-#imdisk -d -m l:
+installFromIso("SQL_Svr_Web_Ed_2014w_SP1_64Bit_English", "\\fileserver\software\windows\isos\SW_DVD9_SQL_Svr_Web_Ed_2014w_SP1_64Bit_English_-2_MLF_X20-29022.ISO")
 
 # Visual Studio
-#Get-ChocolateyWebFile "Visual_Studio_Pro_2015_English" "$env:temp\visual-studio-pro-2015.iso" \\fileserver\software\windows\isos\SW_DVD9_NTRL_Visual_Studio_Pro_2015_English_FPP_VL_MLF_X20-29901
-#imdisk -a -f "$env:temp\visual-studio-pro-2015.iso" -m "l:"
-#Install-ChocolateyInstallPackage 'Visual_Studio_Pro_2015_English' 'exe' '/q' 'l:\vs_professional.exe'
-#imdisk -d -m l:
+installFromIso("Visual_Studio_Pro_2015_English", "\\fileserver\software\windows\isos\SW_DVD9_NTRL_Visual_Studio_Pro_2015_English_FPP_VL_MLF_X20-29901.ISO")
 
 
 # Cleanup
