@@ -24,7 +24,7 @@ New-VMSwitch -Name externalSwitch -NetAdapterName $ethernet.Name -AllowManagemen
 
 choco install docker docker-machine docker-compose
 install-module post-docker
-choco install docker-for-windows
+choco install docker-for-windows --ignore-checksums
 
 
 # utilities
