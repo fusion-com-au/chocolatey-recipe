@@ -1,6 +1,8 @@
 Update-ExecutionPolicy RemoteSigned  
 
 . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/base.boxstarter } | iex;
+
+
 # Docker
 choco install Microsoft-Hyper-V-All -source windowsFeatures
 # choco install Microsoft-Hyper-V-Tools-All -source windowsFeatures
