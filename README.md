@@ -5,7 +5,7 @@ A [Boxstarter](http://boxstarter.org/)/[Chocolatey](https://chocolatey.org/) scr
 
 Walk through is located at [Chocolatey and Boxstarter post.](http://www.jamessturtevant.com/posts/Chocolatey-And-Boxstarter/)
 
-Choose and run from below in powershell:
+Choose and run from below in administrator elevated powershell:
 
 ## Base
 
