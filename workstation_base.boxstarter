@@ -27,6 +27,12 @@ install-module post-docker
 choco install docker-for-windows --ignore-checksums
 
 
+# environment
+nodist + latest
+npm install -g npm
+npm install -g microsoft-build-tools
+npm config set msvs_version 2015
+
 # utilities
 choco install skype 
 choco install sourcetree
