@@ -1,8 +1,11 @@
 Update-ExecutionPolicy RemoteSigned  
 
 # Tooling
+
+. { iwr -useb http://psget.net/GetPsGet.ps1 } | iex
 . { iwr -useb https://chocolatey.org/install.ps1 } | iex;
 . { iwr -useb https://get.scoop.sh } | iex;
+
 choco feature enable -n allowGlobalConfirmation
 choco install Boxstarter
 choco install powershell
