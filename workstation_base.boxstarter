@@ -6,7 +6,6 @@ Update-ExecutionPolicy RemoteSigned
 scoop install concfg
 concfg import monokai --non-interactive 
 concfg clean
-scoop install pshazz
 
 # Docker
 choco install Microsoft-Hyper-V-All -source windowsFeatures
