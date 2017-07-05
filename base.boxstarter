@@ -20,7 +20,7 @@ Set-ExplorerOptions -showHiddenFilesFoldersDrives -showProtectedOSFiles -showFil
 
 # Dev
 choco install git
-choco install git-credential-winstore
+choco install git-credential-manager-for-windows
 choco install poshgit
 choco install openssh
 
