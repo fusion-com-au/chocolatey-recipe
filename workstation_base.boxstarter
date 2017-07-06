@@ -25,6 +25,9 @@ choco install docker docker-machine docker-compose
 install-module post-docker
 choco install docker-for-windows --ignore-checksums
 
+# Allow edge to visit local loopback addresses
+# https://stackoverflow.com/a/37848210
+CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"
 
 # environment
 nodist + latest
