@@ -7,44 +7,46 @@ Walk through is located at [Chocolatey and Boxstarter post.](http://www.jamesstu
 
 Choose and run from below in administrator elevated powershell:
 
-## Base
-
-```
- . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/base.boxstarter } | iex;
-```
-
 ### Server_IIS
 
-```
- . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_dot-net.boxstarter } | iex;
-```
-
-## Workstation_Base
+Provisions software for an IIS server
 
 ```
- . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_base.boxstarter } | iex;
+ . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/server_iis.ps1 } | iex;
 ```
 
-### Workstation_Frontend
+## Workstation
+
+Every windows workstation in Fusion should run this.
+
+```
+ . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation.ps1 } | iex;
+```
+
+### Workstation_Web
+
+Workstation profile for frontend web developers. Although they'd usually just install `Workstation_DotNet`
 
 includes
 
-- Workstation_Base
+- Workstation
 
 ```
- . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_frontend-webdev.boxstarter } | iex;
+ . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_web.ps1 } | iex;
 ```
 
 ### Workstation_DotNet
 
 includes:
 
+- Workstation
+- Workstation_Web
 - Server_IIS
-- Workstation_Frontend
 
 ```
- . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_dot-net.boxstarter } | iex;
+ . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_dot-net.ps1 } | iex;
 ```
+
 
 
 ## Contributions
