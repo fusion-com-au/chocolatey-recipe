@@ -3,6 +3,8 @@ set-executionpolicy RemoteSigned
 . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_frontend-webdev.boxstarter } | iex;
 . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/server_iis.boxstarter } | iex;
 
+disable-uac
+
 Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
 
 # Utilities
@@ -15,4 +17,4 @@ choco install scriptcs
 
 
 # Cleanup
-Enable-UAC
+enable-uac
