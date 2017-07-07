@@ -49,7 +49,18 @@ includes:
 
 
 
-## Contributions
+## Contributing
+
+1. Clone
+3. Edit
+4. Commit
+5. Push
+
+## References
+
+- [boxstarter](http://boxstarter.org/WhyBoxstarter)
+- [chocolatey](https://chocolatey.org/docs)
+- [powershell](https://docs.microsoft.com/en-us/powershell/)
 
 ### Chocolatey Windows Features
 

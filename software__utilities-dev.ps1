@@ -7,3 +7,4 @@ choco install winmerge
 choco install fiddler4
 choco install astrogrep
 choco install procexp
+choco install devdocs-app
