@@ -2,6 +2,8 @@ set-executionpolicy RemoteSigned
 
 . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/workstation_base.boxstarter } | iex;
 
+Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
+
 # editors
 choco install visualstudiocode
 choco install sublimetext3
