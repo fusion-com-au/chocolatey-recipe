@@ -1,7 +1,6 @@
 set-executionpolicy RemoteSigned  
 
 # Tooling
-
 . { iwr -useb http://psget.net/GetPsGet.ps1 } | iex
 . { iwr -useb https://chocolatey.org/install.ps1 } | iex;
 . { iwr -useb https://get.scoop.sh } | iex;
@@ -11,26 +10,15 @@ choco install Boxstarter
 choco install powershell
 scoop install sudo
 
-
-# #justwindowsthings
-Disable-UAC
-Disable-BingSearch
-Set-ExplorerOptions -showHiddenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
-
+refreshenv
 
 # Dev
 choco install git
 choco install git-credential-manager-for-windows
-choco install poshgit
 choco install openssh
-
+choco install poshgit
 
 # Languages
-choco install nodist
-choco install python2
-choco install jre8
-
-
-# Cleanup
-Enable-UAC
-Install-WindowsUpdate -getUpdatesFromMS -acceptEula -SuppressReboots
+. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/sofware__python.ps1 } | iex;
+. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/sofware__java.ps1 } | iex;
+. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/sofware__nodejs.ps1 } | iex;

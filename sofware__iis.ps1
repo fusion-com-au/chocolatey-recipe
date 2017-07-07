@@ -1,3 +1,5 @@
+set-executionpolicy RemoteSigned
+
 
 # Server
 

@@ -1,11 +1,13 @@
+set-executionpolicy RemoteSigned
+
+
 Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
 
 function installFromIso ($name, $source, $silentArgs, $setupCommand) {
-    
-	$mountVolume = mount-diskimage $source -PassThru
-	$driveLetter = ($mountVolume | Get-Volume).DriveLetter
+    $mountVolume = mount-diskimage $source -PassThru
+    $driveLetter = ($mountVolume | Get-Volume).DriveLetter
     $setupPath = "$($driveLetter):\$setupCommand"
-	Install-ChocolateyInstallPackage -PackageName $name -FileType 'exe' -SilentArgs $silentArgs "$($driveLetter):\setup.exe"
+    Install-ChocolateyInstallPackage -PackageName $name -FileType 'exe' -SilentArgs $silentArgs "$($driveLetter):\setup.exe"
     dismount-diskimage $source
 }
 
