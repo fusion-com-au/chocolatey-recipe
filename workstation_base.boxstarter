@@ -1,4 +1,4 @@
-Update-ExecutionPolicy RemoteSigned  
+set-executionPolicy RemoteSigned  
 
 . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/base.boxstarter } | iex;
 
