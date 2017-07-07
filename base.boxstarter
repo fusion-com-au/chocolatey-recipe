@@ -1,4 +1,4 @@
-set-executionPolicy RemoteSigned  
+set-executionpolicy RemoteSigned  
 
 # Tooling
 
