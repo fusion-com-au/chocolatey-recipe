@@ -1,9 +1,14 @@
 set-executionpolicy RemoteSigned
 
+# Imports
+. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/lib__refresh-env.ps1 } | iex;
 
 choco install nodist
 
+
 refreshenv
+refresh-path
+
 
 nodist + latest
 npm install -g npm

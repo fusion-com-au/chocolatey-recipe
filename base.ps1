@@ -1,5 +1,8 @@
 set-executionpolicy RemoteSigned  
 
+# Imports
+. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/lib__refresh-env.ps1 } | iex;
+
 # Tooling
 . { iwr -useb http://psget.net/GetPsGet.ps1 } | iex
 . { iwr -useb https://chocolatey.org/install.ps1 } | iex;
@@ -11,6 +14,7 @@ choco install powershell
 scoop install sudo
 
 refreshenv
+refresh-path
 
 # Dev
 choco install git
