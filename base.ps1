@@ -19,6 +19,6 @@ choco install openssh
 choco install poshgit
 
 # Languages
-. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/sofware__python.ps1 } | iex;
-. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/sofware__java.ps1 } | iex;
-. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/sofware__nodejs.ps1 } | iex;
+. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/software__python.ps1 } | iex;
+. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/software__java.ps1 } | iex;
+. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/software__nodejs.ps1 } | iex;
