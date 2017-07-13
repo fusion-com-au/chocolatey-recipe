@@ -19,6 +19,13 @@ Try {
 Catch {
 	$adapter = Get-NetAdapter -Name wi-fi
 }
+Try {
+	echo "Removing existing VMSwitch with name 'externalSwitch' if present."
+	Remove-VMSwitch externalSwitch -Force
+}
+Catch {
+	echo "Existing VMSwitch named 'externalSwitch' not found"
+}
 New-VMSwitch -Name externalSwitch -NetAdapterName $adapter.Name -AllowManagementOS $true -Notes 'Parent OS, VMs, LAN/WiFi'
 
 choco install docker docker-machine docker-compose
