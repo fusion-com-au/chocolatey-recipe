@@ -12,5 +12,5 @@ refresh-path
 
 nodist + latest
 npm install -g npm
-npm install -g microsoft-build-tools
+npm install -g windows-build-tools
 npm config set msvs_version 2015
