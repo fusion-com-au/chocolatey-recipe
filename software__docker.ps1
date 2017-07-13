@@ -12,8 +12,14 @@ choco install Microsoft-Hyper-V-Tools-All -source windowsFeatures
 
 # https://blogs.technet.microsoft.com/heyscriptingguy/2013/10/09/use-powershell-to-create-virtual-switches/
 Import-Module Hyper-V
-$ethernet = Get-NetAdapter -Name ethernet
-New-VMSwitch -Name externalSwitch -NetAdapterName $ethernet.Name -AllowManagementOS $true -Notes ‘Parent OS, VMs, LAN’
+$adapter
+Try {
+	$adapter = Get-NetAdapter -Name ethernet
+}
+Catch {
+	$adapter = Get-NetAdapter -Name wi-fi
+}
+New-VMSwitch -Name externalSwitch -NetAdapterName $adapter.Name -AllowManagementOS $true -Notes ‘Parent OS, VMs, LAN’
 
 choco install docker docker-machine docker-compose
 install-module posh-docker
