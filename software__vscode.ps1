@@ -1,8 +1,13 @@
 set-executionpolicy RemoteSigned
 
+# Imports
+. { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/lib__refresh-env.ps1 } | iex;
 
 # Visual Studio Code
 choco install visualstudiocode vscode-icons
+
+refreshenv
+refresh-path
 
 code --install-extension abierbaum.vscode-file-peek
 code --install-extension formulahendry.docker-explorer
