@@ -22,5 +22,5 @@ Catch {
 New-VMSwitch -Name externalSwitch -NetAdapterName $adapter.Name -AllowManagementOS $true -Notes 'Parent OS, VMs, LAN/WiFi'
 
 choco install docker docker-machine docker-compose
-install-module posh-docker
+install-module -ModuleUrl https://raw.githubusercontent.com/samneirinck/posh-docker/master/posh-docker/posh-docker.psm1
 choco install docker-for-windows --ignore-checksums
