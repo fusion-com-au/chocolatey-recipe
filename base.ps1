@@ -1,4 +1,4 @@
-set-executionpolicy RemoteSigned  
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 
 # Imports
 . { iwr -useb https://raw.githubusercontent.com/fusion-com-au/dev-workstation-boxstarter/master/lib__refresh-env.ps1 } | iex;
