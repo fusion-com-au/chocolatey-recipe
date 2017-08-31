@@ -17,3 +17,10 @@ choco install IIS-ASPNET -source windowsFeatures
 choco install IIS-ASPNET45 -source windowsFeatures
 choco install IIS-ManagementConsole -source windowsFeatures
 choco install IIS-ManagementService -source windowsFeatures
+
+choco install urlrewrite /y
+
+# Remove-Website 'Default Web Site'
+# Remove-WebAppPool -Name '.NET v4.5'
+# Remove-WebAppPool -Name '.NET v4.5 Classic'
+# Remove-WebAppPool -Name 'DefaultAppPool'
