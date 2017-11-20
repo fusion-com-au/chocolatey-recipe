@@ -10,7 +10,6 @@ refreshenv
 refresh-path
 
 code --install-extension abierbaum.vscode-file-peek
-code --install-extension formulahendry.docker-explorer
 code --install-extension PeterJausovec.vscode-docker
 code --install-extension agauniyal.vscode-caniuse
 code --install-extension anseki.vscode-color
