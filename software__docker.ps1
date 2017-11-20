@@ -14,10 +14,10 @@ choco install Microsoft-Hyper-V-Tools-All -source windowsFeatures
 Import-Module Hyper-V
 $adapter;
 Try {
-	$adapter = Get-NetAdapter -Name ethernet
+	$adapter = Get-NetAdapter | where-object {$_.name -Match 'ethernet'}
 }
 Catch {
-	$adapter = Get-NetAdapter -Name wi-fi
+	$adapter = Get-NetAdapter | where-object {$_.name -Match 'wi-fi'}
 }
 Try {
 	echo "Removing existing VMSwitch with name 'externalSwitch' if present."
