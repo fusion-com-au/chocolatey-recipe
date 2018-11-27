@@ -1,5 +1,5 @@
 set-executionpolicy RemoteSigned
 
 
-choco install inkscape
-choco install paint.net
+# choco install inkscape
+# choco install paint.net
